@@ -1,0 +1,18 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>titulo</th>
+        <th>duración</th>
+        <th>autor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rola of rolas">
+        <td>{{ rola.titulo }}</td>
+        <td>{{ rola.duracion }}</td>
+        <td>{{ rola.autor.nombre }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

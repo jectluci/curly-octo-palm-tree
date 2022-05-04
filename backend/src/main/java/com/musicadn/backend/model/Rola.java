@@ -19,7 +19,7 @@ public class Rola {
     @Column(name = "titulo")
     private String titulo;
     @Column(name = "duracion")
-    private int dutacion;
+    private int duracion;
     @ManyToOne
     @JoinColumn(name = "id_autor")
     private Autor autor;
@@ -40,12 +40,12 @@ public class Rola {
         this.titulo = titulo;
     }
 
-    public int getDutacion() {
-        return dutacion;
+    public int getDuracion() {
+        return duracion;
     }
 
-    public void setDutacion(int dutacion) {
-        this.dutacion = dutacion;
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
     }
 
     public Autor getAutor() {
@@ -56,9 +56,9 @@ public class Rola {
         this.autor = autor;
     }
 
-    public Rola(String titulo, int dutacion, Autor autor) {
+    public Rola(String titulo, int duracion, Autor autor) {
         this.titulo = titulo;
-        this.dutacion = dutacion;
+        this.duracion = duracion;
         this.autor = autor;
     }
 
