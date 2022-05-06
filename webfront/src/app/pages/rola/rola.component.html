@@ -1,10 +1,11 @@
-<div>
-  <table>
+<div class="container table__container">
+  <table class="table table__rola" >
     <thead>
       <tr>
-        <th>titulo</th>
-        <th>duración</th>
-        <th>autor</th>
+        <th>Titulo</th>
+        <th>Duración</th>
+        <th>Autor</th>
+        <th>Opciones</th>
       </tr>
     </thead>
     <tbody>
@@ -12,6 +13,10 @@
         <td>{{ rola.titulo }}</td>
         <td>{{ rola.duracion }}</td>
         <td>{{ rola.autor.nombre }}</td>
+        <td>
+          <button>Actualziar</button>
+          <button>Eliminar</button>
+        </td>
       </tr>
     </tbody>
   </table>

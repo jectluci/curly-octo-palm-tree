@@ -1,14 +1,34 @@
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let autor of autors">
-        <td>{{ autor.nombre }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="table__container">
+    <table class="table table__autor">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let autor of autors">
+          <td>{{ autor.nombre }}</td>
+          <td class="table__options">
+            <button (click)="updateAutor(autor)" >Actualizar</button>
+            <button (click)="deleteAutor(autor.id)" >Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="form__container">
+    <form class="form__autor"  #formAutor="ngForm"  (ngSubmit)="agregarAutor(formAutor)" >
+      <h3>Formulario de LLenado de autores</h3>
+      <div class="form__input">
+        <input type="text" placeholder="Nombre del autor"  name="nombre" [(ngModel)]="modelo.nombre" required #nombre="ngModel"/>
+        <div [hidden]="nombre.valid || nombre.pristine" >Este campo es requerido</div>
+
+      </div>
+      <div class="form__input">
+      <button type="submit"  >GUARDAR</button>
+      </div>
+    </form>
+  </div>
 </div>
