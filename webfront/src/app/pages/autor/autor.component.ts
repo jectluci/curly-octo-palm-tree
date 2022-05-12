@@ -34,7 +34,6 @@ export class AutorComponent implements OnInit {
   updateAutor(autor: any): void {
     this.modelo.id = autor.id;
     this.modelo.nombre = autor.nombre;
-    console.log(this.modelo);
   }
   deleteAutor(id: number): void {
     this.autorSvc.deleteAutor(id);

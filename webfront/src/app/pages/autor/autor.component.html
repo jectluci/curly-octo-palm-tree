@@ -19,8 +19,8 @@
     </table>
   </div>
   <div class="form__container">
-    <form class="form__autor"  #formAutor="ngForm"  (ngSubmit)="agregarAutor(formAutor)" >
       <h3>Formulario de LLenado de autores</h3>
+    <form class="form__autor"  #formAutor="ngForm"  (ngSubmit)="agregarAutor(formAutor)" >
       <div class="form__input">
         <input type="text" placeholder="Nombre del autor"  name="nombre" [(ngModel)]="modelo.nombre" required #nombre="ngModel"/>
         <div [hidden]="nombre.valid || nombre.pristine" >Este campo es requerido</div>

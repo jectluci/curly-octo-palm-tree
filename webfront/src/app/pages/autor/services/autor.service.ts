@@ -22,7 +22,6 @@ export class AutorService {
       });
   }
   public updateAutor(nombre: string, id: string): void {
-    console.log(nombre, id);
     this.http
       .post<Autor>(`${this.apiUrl} ${id}`, {
         nombre: nombre,

@@ -31,18 +31,18 @@ public class RolaRest {
     }
 
     @PostMapping
-    private ResponseEntity<?> addRola(@RequestBody Rola rola ) {
-        rolaService.addRola(rola.getTitulo(), rola.getDutacion(), rola.getAutor().getId());
-        return new ResponseEntity("rola añadida", HttpStatus.OK);
+    private ResponseEntity<?> addRola(@RequestBody Rola rola) {
+        rolaService.addRola(rola.getTitulo(), rola.getDuracion(), rola.getAutor().getId());
+        return ResponseEntity.ok("rola añadida");
     }
 
-    @PostMapping(value="{id}")
+    @PostMapping(value = "{id}")
     private ResponseEntity<?> updateRola(@PathVariable Long id, @RequestBody Rola rola) {
-        rolaService.updateRola(id, rola.getTitulo(), rola.getDutacion(), rola.getAutor().getId());
+        rolaService.updateRola(id, rola.getTitulo(), rola.getDuracion(), rola.getAutor().getId());
         return ResponseEntity.ok("rola actuaizada");
     }
 
-    @DeleteMapping(value="{id}")
+    @DeleteMapping(value = "{id}")
     private ResponseEntity<?> deleteAutor(@PathVariable Long id) {
         rolaService.quitarRola(id);
         return new ResponseEntity("Rola eliminada", HttpStatus.OK);

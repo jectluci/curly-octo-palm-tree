@@ -1,23 +1,54 @@
-<div class="container table__container">
-  <table class="table table__rola" >
-    <thead>
-      <tr>
-        <th>Titulo</th>
-        <th>Duración</th>
-        <th>Autor</th>
-        <th>Opciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let rola of rolas">
-        <td>{{ rola.titulo }}</td>
-        <td>{{ rola.duracion }}</td>
-        <td>{{ rola.autor.nombre }}</td>
-        <td>
-          <button>Actualziar</button>
-          <button>Eliminar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="table__container">
+    <table class="table table__rola">
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Duración</th>
+          <th>Autor</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rola of rolas">
+          <td>{{ rola.titulo }}</td>
+          <td>{{ rola.duracion }}</td>
+          <td>{{ rola.autor.nombre }}</td>
+          <td>
+            <button (click)="updateRola(rola)" >Actualziar</button>
+            <button (click)="deleteRola(rola.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="form__rola">
+    <form #formRola="ngForm" (ngSubmit)="addRola(formRola)">
+      <div>
+        <input
+          type="text"
+          placeholder="titulo"
+          [(ngModel)]="modelo.titulo"
+          name="titulo"
+        />
+      </div>
+      <div>
+        <input
+          type="number"
+          placeholder="duration"
+          [(ngModel)]="modelo.duration"
+          name="duration"
+        />
+      </div>
+      <select name="autor" id="autor" [(ngModel)]="modelo.autor"  >
+        <option *ngFor="let autor of autores" value="{{autor.id}}" selected>
+          {{autor.nombre}}
+        </option>
+      </select>
+
+      <div>
+        <button type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
 </div>
